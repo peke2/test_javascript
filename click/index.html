@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</head>
+<body>
+<div id="greeting">Hello</div>
+<div id="detected">押されたキー → <div class="code">Unkown</div></div>
+<script>
+  // 要素のクリック検出
+  var greeting = document.getElementById('greeting');
+  greeting.onclick = function(){
+    var now = greeting.innerText;
+    if( now == 'Hello' )
+      greeting.innerText = 'Good morning';
+    else
+      greeting.innerText = 'Hello';
+  }
+
+  // キーの押下を検出
+  document.onkeydown = function(e){
+    var elem = document.getElementById('detected');
+    var list = elem.getElementsByClassName('code');
+    var code_disp = list[0];
+    code_disp.innerText = e.key;
+  }
+
+</script>
+</body>
+</html>
