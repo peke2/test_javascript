@@ -1,3 +1,4 @@
+//	ECMAScript6での記述
 class Greeting
 {
 	constructor(word)
