@@ -1,4 +1,6 @@
 //	ECMAScript6での記述
+//	ブラウザからの呼び出しを前提に作成している
+//	(ECMAScript6がブラウザで使用可能かどうか確認するため)
 class Greeting
 {
 	constructor(word)
@@ -12,6 +14,19 @@ class Greeting
 	}
 }
 
+class Morning extends Greeting
+{
+	constructor()
+	{
+		super('');
+	}
+
+	say(name)
+	{
+		return 'Good morning '+name;
+	}
+}
+
 
 function start()
 {
@@ -20,4 +35,7 @@ function start()
 	//document.write(greeting.say());
 	//document.write("Good morning");
 	console.log(greeting.say('who'));
+
+	var morning = new Morning();
+	console.log(morning.say('you'));
 }
